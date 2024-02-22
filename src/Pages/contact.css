@@ -1,0 +1,7 @@
+.ContactPage {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  flex-direction: column;
+}

@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "lato";
+  src: url("../assets/Fonts/Lato/Lato-Regular.ttf");
+}
+@font-face {
+  font-family: "arimo";
+  src: url(../assets/Fonts/Arimo/static/Arimo-Regular.ttf);
+}
+@font-face {
+  font-family: "arimo-Bold";
+  src: url(../assets/Fonts/Arimo/static/Arimo-Bold.ttf);
+}
+@font-face {
+  font-family: "titillium-bold";
+  src: url(../assets/Fonts/Titillium_Web/TitilliumWeb-Bold.ttf);
+}
+.About-page {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.aboutHeader {
+  background-image: url("../assets/TOABOUTPAGE/AboutHeader.svg");
+  width: 100%;
+  height: 46vh;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+}
+.MainHeading {
+  font-family: "lato";
+  font-size: 45px;
+  color: #fff;
+  margin-left: 5%;
+  margin-bottom: 4%;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 200;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.sectionClothes {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  grid-gap: 5%;
+}
+.menSection {
+  background-image: url("../assets/TOABOUTPAGE/men.svg");
+  width: 40%;
+  height: 80%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+.womenSection {
+  background-image: url("../assets/TOABOUTPAGE/women.svg");
+  width: 40%;
+  height: 80%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+.buy {
+  width: 30%;
+  border: none;
+  border-radius: 100px;
+  height: 10%;
+  margin-bottom: 10%;
+  font-size: 22px;
+  transition-duration: 0.3s;
+  color: #14517b;
+}
+.buy:hover {
+  color: #fff;
+  background-color: #14517b;
+}
+.Testimonials {
+  width: 100%;
+  height: 140vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10%;
+}
+.Testimonial {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  grid-gap: 5%;
+  width: 70%;
+}
+.Testimonial_textPart {
+  grid-gap: 5%;
+  height: 80%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+}

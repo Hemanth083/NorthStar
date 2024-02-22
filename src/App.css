@@ -1,0 +1,404 @@
+@font-face {
+  font-family: "lato";
+  src: url(./assets/Fonts/Lato/Lato-Light.ttf);
+}
+@font-face {
+  font-family: "arimo";
+  src: url(./assets/Fonts/Arimo/static/Arimo-Regular.ttf);
+}
+@font-face {
+  font-family: "arimo-Bold";
+  src: url(./assets/Fonts/Arimo/static/Arimo-Bold.ttf);
+}
+@font-face {
+  font-family: "titillium-bold";
+  src: url(./assets/Fonts/Titillium_Web/TitilliumWeb-Bold.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  text-align: center;
+}
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.navagationBar {
+  width: 90vw;
+  height: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.toNextPage {
+  width: 20%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-left: -40%;
+}
+.heading {
+  color: black;
+  font-size: 36px;
+  font-family: lato;
+  font-weight: 900;
+  width: 20%;
+  text-align: center;
+}
+.links {
+  font-family: "arimo";
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+}
+
+.link {
+  width: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart {
+  width: 30%;
+  position: relative;
+}
+.count-of-items {
+  font-size: 15px;
+  position: absolute;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.mainPage {
+  height: 82vh;
+  width: 100%;
+  background-image: url(./assets/img_1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.empty {
+  width: 50%;
+}
+.displayOnMainPage {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: 25px;
+}
+.mainHeading {
+  width: 100%;
+  font-size: 45px;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+}
+.mainPageButton {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 5px solid #fff;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  font-family: "arimo-Bold";
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.NewArrival {
+  width: 100%;
+  height: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.NewArrivalHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 30vh;
+}
+.newItems {
+  display: grid;
+}
+.container {
+  display: grid;
+  grid-template-rows: repeat(
+    2,
+    1fr
+  ); /* Adjust the number of columns as needed */
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Adjust the number of rows as needed */
+  gap: 25px;
+}
+.newItems {
+  background-color: #fff;
+  padding: 15px;
+  display: flex;
+  grid-gap: 15px;
+  flex-direction: column;
+}
+
+.NewArrivalHeader {
+  color: #000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  grid-gap: 10px;
+}
+.newArrivalHeading {
+  width: 100%;
+  text-align: center;
+}
+.SubHeading {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 20px;
+  font-family: "lato";
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+}
+.nameOfShirts {
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  font-family: "titillium-bold";
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.benifitsContainer {
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.benifits {
+  width: 22.5vw;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: row;
+}
+.benifitsLogo {
+  width: 20%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.benifitText {
+  width: 60%;
+  display: flex;
+  grid-gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.h2 {
+  font-size: 18px;
+  font-family: "lato";
+  font-weight: 500;
+}
+.icon {
+  width: 25px;
+  height: auto;
+}
+p {
+  color: #555555;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.promo {
+  width: 90%;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.promo1 {
+  width: 59%;
+  height: 90%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: 10%;
+}
+.promo2 {
+  width: 39%;
+  height: 90%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: 10%;
+}
+.PromoHeading {
+  color: #fff;
+  font-family: "lato";
+  font-size: 29px;
+}
+.promotext {
+  color: #fff;
+  font-family: "lato";
+  width: 50%;
+  text-align: center;
+  font-size: 15px;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.topSales {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 130vh;
+  width: 100%;
+  grid-gap: 5vh;
+}
+.topSalesContainer {
+  grid-template-rows: repeat(1, 1fr);
+}
+.buyNow {
+  background-color: #024e82;
+  width: 220px;
+  height: 60px;
+  font-family: "lato";
+  color: #fff;
+}
+.buyNow:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+button {
+  cursor: pointer;
+}
+.mainPageButton:hover {
+  background-color: #fff;
+  color: #000;
+  transition-duration: 0.3s;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.footer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "lato";
+  background-color: #fbfbfb;
+  flex-direction: column;
+  grid-gap: 10%;
+}
+table {
+  width: 80%;
+  height: 40%;
+  text-align: start;
+}
+
+th {
+  text-align: start;
+  width: 25%;
+}
+td {
+  width: 25%;
+}
+.sendEmail {
+  border-bottom: solid 2px #e8e8e8;
+  border-top: solid 2px transparent;
+  border-left: solid 2px transparent;
+  border-right: solid 2px transparent;
+  width: 80%;
+  font-size: 15px;
+}
+.sendEmail::placeholder {
+  font-size: 15px;
+  width: 80%;
+  align-items: center;
+}
+.sendEmail:focus {
+  border-bottom-color: solid 2px #e8e8e8;
+  border-top: solid 2px transparent;
+  border-left: solid 2px transparent;
+  border-right: solid 2px transparent;
+  outline: none;
+}
+.subimitEmail {
+  width: 35%;
+  height: 50%;
+  border: none;
+  font-family: "lato";
+  background-color: #024e82;
+  color: #fff;
+}
+.termsAndCondition {
+  width: 20%;
+  display: flex;
+  grid-gap: 10px;
+  flex-direction: column;
+}
+.sponser {
+  height: 20%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: solid 2px #e8e8e8;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* 
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
