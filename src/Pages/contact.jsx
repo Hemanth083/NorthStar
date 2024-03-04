@@ -1,6 +1,5 @@
 import React from 'react'
 import './about.css'
-import { Footer } from "../main.jsx"
 import NavagationBar from '../components/NavigationBar.jsx'
 import "./contact.css"
 import contactImage from "../assets/contact/Contact.png"
@@ -12,7 +11,7 @@ const Contact = () => {
     return (
         <div className='ContactPage' style={body}>
             <NavagationBar></NavagationBar>
-            <img src={contactImage}></img>
+            <img alt='' src={contactImage}></img>
         </div >
     )
 

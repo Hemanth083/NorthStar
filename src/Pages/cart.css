@@ -1,3 +1,30 @@
+@font-face {
+  font-family: "lato";
+  src: url(../assets/Fonts/Lato/Lato-Light.ttf);
+}
+@font-face {
+  font-family: "arimo";
+  src: url(../assets/Fonts/Arimo/static/Arimo-Regular.ttf);
+}
+@font-face {
+  font-family: "arimo-Bold";
+  src: url(../assets/Fonts/Arimo/static/Arimo-Bold.ttf);
+}
+@font-face {
+  font-family: "titillium-bold";
+  src: url(../assets/Fonts/Titillium_Web/TitilliumWeb-Bold.ttf);
+}
+
+h2,
+th {
+  font-family: "arimo-Bold";
+}
+p,
+td,
+h1 {
+  font-family: "lato";
+  font-weight: 600;
+}
 .cart-page {
   display: flex;
   align-items: center;
@@ -5,20 +32,73 @@
   width: 100%;
   flex-direction: column;
 }
+
 .CartItems {
-  width: 80%;
-  height: 20%;
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  justify-content: center;
+  width: 90%;
+  min-height: 100vh;
 }
+
 .CartItemImage {
   width: 30%;
 }
+
+.cartTable {
+  width: 90%;
+}
+
+td {
+  width: 20%;
+  overflow: hidden;
+}
+
+.cartTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.cartTable th,
+.cartTable td {
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.cartTable th {
+  background-color: #f2f2f2;
+}
+
+.CartItemImage {
+  width: 50px;
+  height: auto;
+}
+
 .CartItem {
-  display: flex;
-  align-items: start;
-  flex-direction: row;
-  justify-content: center;
+  border-bottom: 1px solid #dddddd;
+}
+
+input,
+input::placeholder {
+  width: 20%;
+  height: 20px;
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+.TotalAmountInTableData {
+  width: 20%;
+}
+/* Add more styling as needed */
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+.SubTotal {
+  width: 90%;
+  margin-bottom: 5%;
+}
+
+.CheckOutButon {
+  background-color: #d6763c;
+  width: 220px;
+  height: 50px;
+  font-family: "lato";
+  color: #fff;
+  font-size: 80%;
+  border: none;
 }
