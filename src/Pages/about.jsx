@@ -6,6 +6,7 @@ import Testimonials_Image2 from "../assets/Testimonials/image2.png"
 import Testimonials_Image3 from "../assets/Testimonials/image3.png"
 import quote from "../assets/Testimonials/quote.svg"
 import Footer from '../components/Footer';
+import ScrollToTopButton from '../components/ScrollUp';
 
 
 const About = () => {
@@ -19,6 +20,8 @@ const About = () => {
             <SectionClothes />
             <Testimonials />
             <Footer />
+            <ScrollToTopButton />
+
 
         </div>
     )

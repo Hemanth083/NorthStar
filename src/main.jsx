@@ -12,8 +12,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart } from './store/slices/cart.slice';
 import NavagationBar from './components/NavigationBar';
 import Footer from './components/Footer';
-// import { useHistory } from 'react-router-dom';
 import UseWindowResize from './components/use-window-resize/index';
+// import ProductDetail from './components/ProductDetails';
+import { Link } from 'react-router-dom';
+import ScrollToTopButton from './components/ScrollUp';
 
 function Project() {
     const windowSize = UseWindowResize();
@@ -29,6 +31,7 @@ function Project() {
             <Promo />
             <TopSellers />
             <Footer />
+            <ScrollToTopButton />
         </div>
     );
 }
@@ -64,40 +67,44 @@ const NewArrival = () => {
 
 const AnImage = ({ image }) => {
     const dispatch = useDispatch();
-    const { cart } = useSelector((state) => state);
-    // const history = useHistory(); // Use useHistory
-
-    const handleAddToCart = () => {
-        dispatch(addToCart(image));
-    };
-
-    const handleRemoveToCart = () => {
-        dispatch(removeFromCart(image.id));
-    }
-
-    // const handleImageClick = () => {
-    //     history.push('/product-detail', { state: { image } });
+    // const { cart } = useSelector((state) => state);
+    // const handleAddToCart = () => {
+    //     dispatch(addToCart(image));
     // };
+
+    // const handleRemoveToCart = () => {
+    //     dispatch(removeFromCart(image.id));
+    // }
+
+
+
     return (
-        <div className='newItems'>
-            <img alt='' src={image.source} />
+        <div className='newItems' >
+            <Link to={`/productDetail/${image.id}`}>
+                <img alt='' src={image.source} />
+            </Link>
+
             <div>
-                <p className='nameOfShirts'>{image.label}</p>
-                <p className='nameOfShirts' style={{ color: '#024E82', size: '10px' }}>
+                <p className='nameOfShirts' >{image.label}</p>
+                <p className='nameOfShirts' style={{ color: '#024E82', size: '10px', marginTop: '3%' }}>
                     {image.price + " $"}
                 </p>
             </div>
-            <div style={{ display: 'flex', flexDirection: "row" }}>
-                <button className='mainPageButton addTOCart' onClick={() => (cart.some(item => item.id === image.id) ? handleRemoveToCart() : handleAddToCart())}>
+            <div style={{ display: 'flex', flexDirection: "row", alignItems: 'center', justifyContent: 'center' }}>
+                {/* <button className='mainPageButton addTOCart' onClick={() => (cart.some(item => item.id === image.id) ? handleRemoveToCart() : handleAddToCart())}>
                     {cart.some(item => item.id === image.id) ? 'remove' : 'add to Cart'}
-                </button>
-                <button className='mainPageButton addTOCart'>
-                    Buy Now
-                </button>
+                </button> */}
+                <Link to='/checkout'>
+                    <button className='mainPageButton addTOCart'>
+                        Buy Now
+                    </button>
+                </Link>
+
             </div>
         </div>
     );
 };
+
 
 const Benifits = () => {
     return (
