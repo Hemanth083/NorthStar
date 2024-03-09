@@ -131,7 +131,7 @@
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .NewArrival {
   width: 100%;
-  height: 1448px;
+  height: 1226px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,7 +162,7 @@
 }
 .newItems {
   background-color: #fff;
-  padding: 15px;
+  padding: 20px;
   display: flex;
   grid-gap: 15px;
   flex-direction: column;
@@ -391,6 +391,22 @@ td {
   align-items: center;
   justify-content: space-between;
   border-top: solid 2px #e8e8e8;
+}
+.image-container {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  height: 300px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 

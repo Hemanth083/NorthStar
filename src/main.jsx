@@ -4,10 +4,7 @@ import icon from './assets/Benifits icons/icon.svg';
 import icon1 from './assets/Benifits icons/icon-1.svg';
 import icon2 from './assets/Benifits icons/icon-2.svg';
 import icon3 from './assets/Benifits icons/icon-3.svg';
-import tp1 from "./assets/topSelling/tp1.svg";
-import tp2 from "./assets/topSelling/tp2.svg";
-import tp3 from "./assets/topSelling/tp3.svg";
-import tp4 from "./assets/topSelling/tp4.svg";
+import topSellingData from './Pages/topsellingdata';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart } from './store/slices/cart.slice';
 import NavagationBar from './components/NavigationBar';
@@ -80,8 +77,8 @@ const AnImage = ({ image }) => {
 
     return (
         <div className='newItems' >
-            <Link to={`/productDetail/${image.id}`}>
-                <img alt='' src={image.source} />
+            <Link className='image-container' to={`/productDetail/${image.id}`}>
+                <img alt='' className='ImageInMain' src={image.source} />
             </Link>
 
             <div>
@@ -94,11 +91,11 @@ const AnImage = ({ image }) => {
                 {/* <button className='mainPageButton addTOCart' onClick={() => (cart.some(item => item.id === image.id) ? handleRemoveToCart() : handleAddToCart())}>
                     {cart.some(item => item.id === image.id) ? 'remove' : 'add to Cart'}
                 </button> */}
-                <Link to='/checkout'>
+                {/* <Link to='/checkout'>
                     <button className='mainPageButton addTOCart'>
                         Buy Now
                     </button>
-                </Link>
+                </Link> */}
 
             </div>
         </div>
@@ -165,18 +162,18 @@ const Promo = () => {
 }
 
 const TopSellers = () => {
-    const images = [tp1, tp2, tp3, tp4];
     return (
         <div className='topSales'>
             <h1 className='heading'>Top Sellers</h1>
             <p className='SubHeading'>Browse our top-selling products</p>
             <div className=' container topSalesContainer'>
-                {images.map((item, index) => (
-                    <div className='newItems'>
-                        <img alt='' key={index} src={item} />
-                        <p className='nameOfShirts' >Shirt {index}</p>
-                        <p className='nameOfShirts'  > $69.00</p>
-                    </div>
+                {topSellingData.map((item, index) => (
+                    // <div className='newItems'>
+                    //     <img alt='' key={index} src={item} />
+                    //     <p className='nameOfShirts' >Shirt {index}</p>
+                    //     <p className='nameOfShirts'  > $69.00</p>
+                    // </div>
+                    <AnImage key={index} image={item} />
                 ))}
             </div>
             <button className='mainPageButton buyNow'>BUY NOW</button>

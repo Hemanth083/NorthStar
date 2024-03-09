@@ -1,6 +1,7 @@
 import NavagationBar from "./NavigationBar"
 import Footer from "./Footer"
 import './CheckOut.css'
+import YourOrder from "./yourOrder"
 const CheckOut = () => {
     return (
         <div className="CheckOut">
@@ -20,6 +21,7 @@ const CheckOut = () => {
                 <label>Address</label>
                 <textarea />
             </div>
+            <YourOrder />
             <Footer />
         </div>
 
