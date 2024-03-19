@@ -4,8 +4,12 @@ import user from "../assets/user.svg";
 import shopping from "../assets/shopping.svg"
 import React from 'react';
 import '../App.css'
+import { useSelector } from 'react-redux';
+
 
 const NavagationBar = () => {
+    const cart = useSelector((state) => state.cart)
+
     return (
         <div className="navagationBar" >
             <div>
@@ -17,8 +21,8 @@ const NavagationBar = () => {
                 <Link className='links' to="/contact">Contact </Link>
             </div>
             <div className='link'>
-                <Link><img alt='' src={user} /></Link>
-                <Link className='cart' to="/cart"  ><img alt='' src={shopping} /><span className='count-of-items'>0</span></Link>
+                <Link><img src={user} /></Link>
+                <Link className='cart' to="/cart"  ><img alt='' src={shopping} /><span className='count-of-items'>{cart.length}</span></Link>
                 <Link><img alt='' src={menu} /></Link>
             </div>
         </div>

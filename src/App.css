@@ -38,6 +38,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  background-color: white;
 }
 .toNextPage {
   width: 20%;
@@ -70,12 +71,19 @@
   justify-content: space-between;
 }
 .cart {
-  width: 30%;
+  width: 35%;
   position: relative;
 }
 .count-of-items {
-  font-size: 15px;
   position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #024e82;
+  color: white;
+  border-radius: 100%;
+
+  padding: 4px 8px 4px 8px;
+  font-size: 12px;
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -123,7 +131,7 @@
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .NewArrival {
   width: 100%;
-  height: 1200px;
+  height: 1226px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +162,7 @@
 }
 .newItems {
   background-color: #fff;
-  padding: 15px;
+  padding: 20px;
   display: flex;
   grid-gap: 15px;
   flex-direction: column;
@@ -182,8 +190,9 @@
 .nameOfShirts {
   color: #000;
   font-size: 18px;
+  font-weight: 600;
   text-align: center;
-  font-family: "titillium-bold";
+  font-family: "lato";
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .benifitsContainer {
@@ -295,9 +304,22 @@ p {
   background-color: #000 !important;
   color: #fff !important;
 }
+.addTOCart {
+  background-color: #024e82;
+  width: 150px;
+  height: 50px;
+  font-family: "lato";
+  color: #fff;
+  font-size: 80%;
+}
+.addTOCart:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
 button {
   cursor: pointer;
 }
+
 .mainPageButton:hover {
   background-color: #fff;
   color: #000;
@@ -369,6 +391,22 @@ td {
   align-items: center;
   justify-content: space-between;
   border-top: solid 2px #e8e8e8;
+}
+.image-container {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  height: 300px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 

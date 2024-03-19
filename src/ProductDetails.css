@@ -1,0 +1,41 @@
+.imageSection {
+  width: 30%;
+  height: 600px;
+}
+.productDetail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+.Details {
+  width: 50%;
+  height: 600px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: start;
+  grid-gap: 30px;
+}
+.productDetailPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.price {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  grid-gap: 2%;
+}
+.shirtName {
+  font-size: 40px;
+  font-weight: 900;
+}
+select {
+  width: 200px;
+  height: 30px;
+}

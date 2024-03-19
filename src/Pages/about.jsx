@@ -1,11 +1,12 @@
 import React from 'react'
 import './about.css'
-import { Footer } from "../main.jsx"
 import NavagationBar from '../components/NavigationBar';
 import Testimonials_Image1 from "../assets/Testimonials/image1.png"
 import Testimonials_Image2 from "../assets/Testimonials/image2.png"
 import Testimonials_Image3 from "../assets/Testimonials/image3.png"
 import quote from "../assets/Testimonials/quote.svg"
+import Footer from '../components/Footer';
+import ScrollToTopButton from '../components/ScrollUp';
 
 
 const About = () => {
@@ -19,6 +20,8 @@ const About = () => {
             <SectionClothes />
             <Testimonials />
             <Footer />
+            <ScrollToTopButton />
+
 
         </div>
     )
@@ -59,20 +62,20 @@ const Testimonials = () => {
             </div>
             <div className='Testimonial'>
                 <div className='Testimonial_imagePart'>
-                    <img src={Testimonials_Image2} alt="" />
+                    <img alt='' src={Testimonials_Image2} />
                 </div>
                 <div className='Testimonial_textPart'>
-                    <img src={quote} />
+                    <img alt='' src={quote} />
                     <p className='Testimonial_text'>I ordered 5 shirts from them and received them in no time. The customer support was awesome!</p>
                     <p><b>Emma</b></p>
                 </div>
             </div>
             <div className='Testimonial'>
                 <div className='Testimonial_imagePart'>
-                    <img src={Testimonials_Image3} alt="" />
+                    <img alt src={Testimonials_Image3} />
                 </div>
                 <div className='Testimonial_textPart'>
-                    <img src={quote} />
+                    <img alt='' src={quote} />
                     <p className='Testimonial_text'>I got a wrong shirt so I contacted them and they happily offered me a refund. I will surely shop from them again.</p>
                     <p><b>Tom</b></p>
                 </div>

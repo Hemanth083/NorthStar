@@ -1,0 +1,18 @@
+/* ScrollToTopButton.css */
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d6763c;
+  color: #fff;
+  border: none;
+  border-radius: 20%;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-to-top-button.visible {
+  opacity: 1;
+}

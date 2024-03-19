@@ -1,29 +1,26 @@
-import './App.css';
 import React from 'react';
 import imagesData from './Pages/data';
-import icon from './assets/Benifits icons/icon.svg'
-import icon1 from './assets/Benifits icons/icon-1.svg'
-import icon2 from './assets/Benifits icons/icon-2.svg'
-import icon3 from './assets/Benifits icons/icon-3.svg'
-import tp1 from "./assets/topSelling/tp1.svg"
-import tp2 from "./assets/topSelling/tp2.svg"
-import tp3 from "./assets/topSelling/tp3.svg"
-import tp4 from "./assets/topSelling/tp4.svg"
-import pay2 from "./assets/paymentMethods/ApplePay.svg"
-import pay3 from "./assets/paymentMethods/Visa.svg"
-import pay1 from "./assets/paymentMethods/Mastercard.svg"
+import icon from './assets/Benifits icons/icon.svg';
+import icon1 from './assets/Benifits icons/icon-1.svg';
+import icon2 from './assets/Benifits icons/icon-2.svg';
+import icon3 from './assets/Benifits icons/icon-3.svg';
+import topSellingData from './Pages/topsellingdata';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart } from './store/slices/cart.slice';
 import NavagationBar from './components/NavigationBar';
-
-const bodyWidth = window.innerWidth;
-console.log(bodyWidth)
-const body = { width: { bodyWidth } };
+import Footer from './components/Footer';
+import UseWindowResize from './components/use-window-resize/index';
+// import ProductDetail from './components/ProductDetails';
+import { Link } from 'react-router-dom';
+import ScrollToTopButton from './components/ScrollUp';
 
 function Project() {
+    const windowSize = UseWindowResize();
+    const { width } = windowSize;
+    const adjustedWidth = width - 16.5;
 
     return (
-        <div className='body' style={body}>
+        <div className='body' style={{ width: adjustedWidth }}>
             <NavagationBar />
             <MainPage />
             <NewArrival />
@@ -31,13 +28,12 @@ function Project() {
             <Promo />
             <TopSellers />
             <Footer />
-        </div >
+            <ScrollToTopButton />
+        </div>
     );
 }
 
 const MainPage = () => {
-
-
     return (
         <div className='mainPage'>
             <div className='empty'></div>
@@ -46,7 +42,7 @@ const MainPage = () => {
                     THE HART</h1>
                 <button className='mainPageButton'>SHOP NOW</button>
             </div>
-        </div >
+        </div>
     );
 }
 
@@ -62,35 +58,46 @@ const NewArrival = () => {
                     ))}
                 </div>
             </div>
-
-        </div >
-
+        </div>
     )
-
 }
+
 const AnImage = ({ image }) => {
     const dispatch = useDispatch();
-    const { cart } = useSelector((state) => state); // Add the correct slice name
+    // const { cart } = useSelector((state) => state);
+    // const handleAddToCart = () => {
+    //     dispatch(addToCart(image));
+    // };
 
-    const handleAddToCart = () => {
-        dispatch(addToCart(image));
-    };
-    const handleRemoveToCart = () => {
-        dispatch(removeFromCart(image.id))
-    }
+    // const handleRemoveToCart = () => {
+    //     dispatch(removeFromCart(image.id));
+    // }
+
+
 
     return (
-        <div className='newItems'>
-            <img alt='' src={image.source} />
+        <div className='newItems' >
+            <Link className='image-container' to={`/productDetail/${image.id}`}>
+                <img alt='' className='ImageInMain' src={image.source} />
+            </Link>
+
             <div>
-                <p className='nameOfShirts'>{image.label}</p>
-                <p className='nameOfShirts' style={{ color: '#024E82', size: '10px' }}>
+                <p className='nameOfShirts' >{image.label}</p>
+                <p className='nameOfShirts' style={{ color: '#024E82', size: '10px', marginTop: '3%' }}>
                     {image.price + " $"}
                 </p>
             </div>
-            <button onClick={() => (cart.some(item => item.id === image.id) ? handleRemoveToCart() : handleAddToCart())}>
-                {cart.some(item => item.id === image.id) ? 'remove from Cart' : 'add to Cart'}
-            </button>
+            <div style={{ display: 'flex', flexDirection: "row", alignItems: 'center', justifyContent: 'center' }}>
+                {/* <button className='mainPageButton addTOCart' onClick={() => (cart.some(item => item.id === image.id) ? handleRemoveToCart() : handleAddToCart())}>
+                    {cart.some(item => item.id === image.id) ? 'remove' : 'add to Cart'}
+                </button> */}
+                {/* <Link to='/checkout'>
+                    <button className='mainPageButton addTOCart'>
+                        Buy Now
+                    </button>
+                </Link> */}
+
+            </div>
         </div>
     );
 };
@@ -155,18 +162,18 @@ const Promo = () => {
 }
 
 const TopSellers = () => {
-    const images = [tp1, tp2, tp3, tp4];
     return (
         <div className='topSales'>
             <h1 className='heading'>Top Sellers</h1>
             <p className='SubHeading'>Browse our top-selling products</p>
             <div className=' container topSalesContainer'>
-                {images.map((item, index) => (
-                    <div className='newItems'>
-                        <img alt='' key={index} src={item} />
-                        <p className='nameOfShirts' >Shirt {index}</p>
-                        <p className='nameOfShirts'  > $69.00</p>
-                    </div>
+                {topSellingData.map((item, index) => (
+                    // <div className='newItems'>
+                    //     <img alt='' key={index} src={item} />
+                    //     <p className='nameOfShirts' >Shirt {index}</p>
+                    //     <p className='nameOfShirts'  > $69.00</p>
+                    // </div>
+                    <AnImage key={index} image={item} />
                 ))}
             </div>
             <button className='mainPageButton buyNow'>BUY NOW</button>
@@ -176,56 +183,5 @@ const TopSellers = () => {
 }
 
 
-export const Footer = () => {
-    return (
-        <div className='footer'>
-            <table>
-                <tr>
-                    <th>COMPANY INFO</th>
-                    <th>HELP LINK</th>
-                    <th>USEFUL LINKS</th>
-                    <th>TEXT TO KNOW</th>
-                </tr>
-                <tr>
-                    <td>About Us</td>
-                    <td>Tracking</td>
-                    <td>Special Offers</td>
-                    <td><input className='sendEmail' type='email' placeholder='Enter Email' /></td>
-                </tr>
-                <tr>
-                    <td>Latest Posts</td>
-                    <td>Order Status</td>
-                    <td>Gift Card</td>
-                    <td><input className='subimitEmail' type='submit' /></td>
-                </tr>
-                <tr>
-                    <td>Contact Us</td>
-                    <td>Delivery</td>
-                    <td>Advetising</td>
-                </tr>
-                <tr>
-                    <td>Shop</td>
-                    <td>Shoping Info</td>
-                    <td>Terms of Use</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>FAQ</td>
-                </tr>
-            </table>
-            <div className='sponser'>
-                <div className='termsAndCondition'>
-                    <p>© 2020 NorthStar eCommerce</p>
-                    <p>Privacy Policy
-                        Terms & Conditions</p>
-                </div>
-                <div className='cardsAllowed'>
-                    <img alt='' width={80} src={pay1} />
-                    <img alt='' width={80} src={pay2} />
-                    <img alt='' width={80} src={pay3} />
-                </div>
-            </div>
-        </div>
-    )
-}
+
 export default Project;
