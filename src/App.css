@@ -90,7 +90,7 @@
 .mainPage {
   height: 82vh;
   width: 100%;
-  background-image: url(./assets/img_1.jpg);
+  /* background-image: url(./assets/img_1.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;

@@ -40,7 +40,7 @@ const MainPage = () => {
             <div className='displayOnMainPage'>
                 <h1 className='heading mainHeading'>STYLIST PICKS BEAT <br />
                     THE HART</h1>
-                <button className='mainPageButton'>SHOP NOW</button>
+                <button className='mainPageButton'>BUY NOW</button>
             </div>
         </div>
     );
