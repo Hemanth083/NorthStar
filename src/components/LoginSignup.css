@@ -1,0 +1,57 @@
+/* modal styles - add to App.css or a component css */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .modal-box {
+    background: #fff;
+    width: 360px;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  }
+  
+  .modal-box h2 { margin-top: 0; }
+  
+  .modal-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  
+  .modal-box input {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+  }
+  
+  .modal-box button[type="submit"] {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .modal-close {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .modal-message { color: #d9534f; margin-top: 8px; }
+  

@@ -1,48 +1,56 @@
-const express = require("express");
+import express from "express";
+import bcrypt from "bcryptjs";
+import User from "../models/User.js";
+
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const User = require("../models/user");
 
-const JWT_SECRET = "supersecretkey"; // use env variable in real apps
-
-// Signup route
+// ✅ Signup Route
 router.post("/signup", async (req, res) => {
-    try {
-        const { name, email, password } = req.body;
+  try {
+    const { firstName, lastName, email, password } = req.body;
 
-        // check if user exists
-        const existingUser = await User.findOne({ email });
-        if (existingUser) return res.status(400).json({ message: "User already exists" });
-
-        // hash password
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        const newUser = new User({ name, email, password: hashedPassword });
-        await newUser.save();
-
-        res.status(201).json({ message: "User created successfully" });
-    } catch (err) {
-        res.status(500).json({ message: "Error creating user" });
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
     }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
+      firstName,
+      lastName,
+      email,
+      password: hashedPassword,
+    });
+
+    await newUser.save();
+    res.json({ message: "User registered successfully!" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
 });
 
-// Login route
+// ✅ Login Route
 router.post("/login", async (req, res) => {
-    try {
-        const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
 
-        const user = await User.findOne({ email });
-        if (!user) return res.status(400).json({ message: "User not found" });
-
-        const isPasswordCorrect = await bcrypt.compare(password, user.password);
-        if (!isPasswordCorrect) return res.status(400).json({ message: "Invalid password" });
-
-        const token = jwt.sign({ id: user._id, email: user.email }, JWT_SECRET, { expiresIn: "1h" });
-        res.json({ token, user: { name: user.name, email: user.email } });
-    } catch (err) {
-        res.status(500).json({ message: "Error logging in" });
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ message: "Invalid credentials" });
     }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(400).json({ message: "Invalid credentials" });
+    }
+
+    res.json({ message: "Login successful!", user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
 });
 
-module.exports = router;
+export default router;
