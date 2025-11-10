@@ -13,7 +13,7 @@ const NavagationBar = () => {
     return (
         <div className="navagationBar" >
             <div>
-                <p className="heading">NorthStar</p>
+                {/* <p className="heading">NorthStar</p> */}
             </div>
             <div className='toNextPage'>
                 <Link className='links' to="/">Home</Link>
