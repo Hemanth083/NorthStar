@@ -1,7 +1,7 @@
-import express from "express";
-import mongoose from "mongoose";
-import cors from "cors";
-import authRoutes from "./routes/authRoutes.js";
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 app.use(express.json());
@@ -13,7 +13,7 @@ mongoose
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB Error:", err));
 
-// ✅ Routes
+// routes
 app.use("/api/auth", authRoutes);
 
 // ✅ Start server
